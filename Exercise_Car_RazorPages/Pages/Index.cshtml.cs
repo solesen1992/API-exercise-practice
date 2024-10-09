@@ -35,7 +35,7 @@ namespace Exercise_Car_RazorPages.Pages
                 var response = _httpClient.GetAsync("http://localhost:5096/apiV1/cars").Result;
                 Console.WriteLine("Response: " + response);
 
-                // Ensure the call was succesful   
+                // Ensure the call was succesful
                 if (response.IsSuccessStatusCode)
                 {
                     // Read response in JSON sring
