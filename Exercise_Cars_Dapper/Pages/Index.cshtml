@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Car List";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h2>Car List</h2>
+
+    <!-- Display a table of cars -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>License Plate</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.cars != null && Model.cars.Any())
+            {
+                foreach (var car in Model.cars)
+                {
+                    <tr>
+                        <td>@car.LicensePlate</td>
+                        <td>@car.Make</td>
+                        <td>@car.Model</td>
+                        <td>@car.Color</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No cars found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
